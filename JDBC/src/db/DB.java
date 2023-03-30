@@ -36,10 +36,9 @@ public class DB {
   }
 
   private static Properties loadProperties() {
-    try (FileInputStream fs = new FileInputStream("/home/vyctor/java/JDBC/db.properties")) {
+    try (FileInputStream fs = new FileInputStream("db.properties")) {
       Properties props = new Properties();
       props.load(fs);
-      System.out.println(props);
       return props;
     } catch (IOException e) {
       throw new DbException(e.getMessage());
